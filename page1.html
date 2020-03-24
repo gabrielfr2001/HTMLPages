@@ -1,8 +1,26 @@
 <html>
-  <body>
-    EXTERNAL WEB PAGE
-    <br/>
-    <a href='javascript:history.back()'>Retornar</a>
-  </body>
-  
+<body>
+    <script>
+	  function setAllParams(){
+		var url = new URL(window.location.href);
+		var c = url.searchParams.get("led");
+		console.log("led: " + c);
+		if(c.localeCompare("on")==0)
+		  document.getElementById("cor").style.color="green";
+		else
+		  document.getElementById("cor").style.color="red";
+	  }
+	</script>
+    <h1 id='cor'>Opções</h1>
+    <form>
+        <p>Estado do LED: </p>
+        <input type='radio' id='led1' name='led' value='on'>
+        <label for='led1'>ON</label>
+        <br>
+        <input type='radio' id='led2' name='led' value='off'>
+        <label for='led2'>OFF</label>
+        <br>
+        <input type='submit' value='Submit'>
+    </form>
+</body>
 </html>
