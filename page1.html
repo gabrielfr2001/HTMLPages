@@ -2,6 +2,7 @@
 <body>
     <script>
 	  function setAllParams(){
+		console.log("PARAMS SETTED");
 		var url = new URL(window.location.href);
 		var c = url.searchParams.get("led");
 		console.log("led: " + c);
