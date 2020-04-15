@@ -1,5 +1,5 @@
 <html>
-<body onload="setAllParams()">
+<body>
     <script>
 	  function setAllParams(){
 		console.log("PARAMS SETTED");
@@ -13,15 +13,17 @@
 	  }
 	</script>
     <h1 id='cor'>Opções</h1>
-    <form>
-        <p>Estado do LED: </p>
-        <input type='radio' id='led1' name='led' value='on'>
-        <label for='led1'>ON</label>
-        <br>
-        <input type='radio' id='led2' name='led' value='off'>
-        <label for='led2'>OFF</label>
-        <br>
-        <input type='submit' value='Submit'>
-    </form>
+    <div onload="setAllParams()">
+	    <form>
+		<p>Estado do LED: </p>
+		<input type='radio' id='led1' name='led' value='on'>
+		<label for='led1'>ON</label>
+		<br>
+		<input type='radio' id='led2' name='led' value='off'>
+		<label for='led2'>OFF</label>
+		<br>
+		<input type='submit' value='Submit'>
+	    </form>
+	</div>
 </body>
 </html>
