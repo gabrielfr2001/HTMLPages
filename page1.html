@@ -2,7 +2,7 @@
 
 <body>
     <h1 id='cor'>Opções</h1>
-    <div style="color:white">
+    <div style="color:white; display:block; background-color: red">
         <form>
             <p>Estado do LED: </p>
             <input type='radio' id='led1' name='led' value='on'>
@@ -17,6 +17,7 @@
         </form>
     </div>
     <script>
+        setAllParams();
         function setAllParams() {
             console.log("PARAMS SETTED");
             var url = new URL(window.location.href);
@@ -31,7 +32,6 @@
             }
             setInterval(setAllParams, 1000);
         }
-        setAllParams();
     </script>
 </body>
 
