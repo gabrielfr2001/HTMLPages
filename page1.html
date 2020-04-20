@@ -11,6 +11,8 @@
 		<label for='led2'>OFF</label>
 		<br>
 		<input type='submit' value='Submit'>
+		<p>VALOR ADC:</p>
+        <p id='adc'></p>
 	    </form>
 	</div>
  <script>
@@ -25,6 +27,7 @@
 			else
 			  document.getElementById("bd").style.backgroundColor="red";
 			setInterval(setAllParams, 1000);
+			document.getElementById("adc").innerText = adc + " -> " +(100*adc/4096)+"%";
 		  }
 	  }
 	 setAllParams();
