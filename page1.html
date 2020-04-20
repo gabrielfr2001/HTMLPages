@@ -26,7 +26,7 @@
                     document.getElementById("bd").style.backgroundColor = "blue";
                 else
                     document.getElementById("bd").style.backgroundColor = "red";
-                document.getElementById("adc").innerText = adc + " -> " + Math.round(adc / 4096) + "%" + " -> " + Math.round(100 * adc / 4096 * 300) + "°";
+                document.getElementById("adc").innerText = adc + " -> " + Math.round(100*adc / 4096) + "%" + " -> " + Math.round(adc / 4096 * 300) + "°";
             }
         }
         setInterval(setAllParams, 1000);
