@@ -29,6 +29,7 @@
                 document.getElementById("adc").innerText = adc + " -> " + Math.round(100 * adc / 4096) + "%" + " -> " + Math.round(100 * adc / 4096 * 300) + "°";
             }
         }
+        setInterval(setAllParams, 1000);
     </script>
 </body>
 
