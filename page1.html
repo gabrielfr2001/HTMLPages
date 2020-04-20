@@ -1,36 +1,38 @@
 <html>
+
 <body>
     <h1 id='cor'>Opções</h1>
-    <div >
-	    <form>
-		<p>Estado do LED: </p>
-		<input type='radio' id='led1' name='led' value='on'>
-		<label for='led1'>ON</label>
-		<br>
-		<input type='radio' id='led2' name='led' value='off'>
-		<label for='led2'>OFF</label>
-		<br>
-		<input type='submit' value='Submit'>
-		<p>VALOR ADC:</p>
-        <p id='adc'></p>
-	    </form>
-	</div>
- <script>
-	  function setAllParams(){
-		console.log("PARAMS SETTED");
-		var url = new URL(window.location.href);
-		var c = url.searchParams.get("led");
-		console.log("led: " + c);
-		  if(c!=null){
-			if(c.localeCompare("on")==0)
-			  document.getElementById("bd").style.backgroundColor="blue";
-			else
-			  document.getElementById("bd").style.backgroundColor="red";
-			setInterval(setAllParams, 1000);
-			document.getElementById("adc").innerText = adc + " -> " +(100*adc/4096)+"%";
-		  }
-	  }
-	 setAllParams();
-	</script>	
+    <div style="color:white">
+        <form>
+            <p>Estado do LED: </p>
+            <input type='radio' id='led1' name='led' value='on'>
+            <label for='led1'>ON</label>
+            <br>
+            <input type='radio' id='led2' name='led' value='off'>
+            <label for='led2'>OFF</label>
+            <br>
+            <input type='submit' value='Submit'>
+            <p>VALOR ADC:</p>
+            <p id='adc'></p>
+        </form>
+    </div>
+    <script>
+        function setAllParams() {
+            console.log("PARAMS SETTED");
+            var url = new URL(window.location.href);
+            var c = url.searchParams.get("led");
+            console.log("led: " + c);
+            if (c != null) {
+                if (c.localeCompare("on") == 0)
+                    document.getElementById("bd").style.backgroundColor = "blue";
+                else
+                    document.getElementById("bd").style.backgroundColor = "red";
+                document.getElementById("adc").innerText = adc + " -> " + Math.round(100 * adc / 4096) + "%" + " -> " + Math.round(100 * adc / 4096 * 300) + "°";
+            }
+            setInterval(setAllParams, 1000);
+        }
+        setAllParams();
+    </script>
 </body>
+
 </html>
