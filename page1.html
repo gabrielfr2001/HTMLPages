@@ -1,8 +1,7 @@
-<html>
 
 <body>
     <h1 id='cor'>Opções</h1>
-    <div style="color:white; display:block; background-color: red">
+    <div style="color:white; display:block; background-color: red;zoom:250%">
         <form>
             <p>Estado do LED: </p>
             <input type='radio' id='led1' name='led' value='on'>
@@ -11,7 +10,7 @@
             <input type='radio' id='led2' name='led' value='off'>
             <label for='led2'>OFF</label>
             <br>
-            <input type='submit' value='Submit'>
+            <input type='submit' value='Atualizar'>
             <p>VALOR ADC:</p>
             <p id='adc'></p>
         </form>
@@ -27,7 +26,7 @@
                 else
                     document.getElementById("bd").style.backgroundColor = "red";
             }    
-                document.getElementById("adc").innerText = adc + " -> " + Math.round(100*adc / 4096) + "%" + " -> " + Math.round(adc / 4096 * 300) + "°";
+                document.getElementById("adc").innerText = adc + " -> " + Math.round(100*adc / 1024);
         }
         setInterval(setAllParams, 1000);
     </script>
