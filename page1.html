@@ -1,16 +1,56 @@
 
-<body>
-    <h1 id='cor'>Opções</h1>
-    <div style="color:white; display:block; background-color: red;zoom:250%">
+<body style="font-family:monospace;font-size:15px;padding:10px">
+   <style>
+     .radio-toolbar {
+  margin: 10px;
+color:black;
+}
+
+.radio-toolbar input[type="radio"] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.radio-toolbar label {
+    display: inline-block;
+    background-color: white;
+    padding: 10px 20px;
+    font-family: sans-serif, Arial;
+    font-size: 16px;
+    border: 2px solid #444;
+    border-radius: 4px;
+}
+
+.radio-toolbar label:hover {
+  background-color: #dfd;
+}
+
+              .radio-toolbar input[type='radio']:focus + label {
+    border: 2px dashed #444;
+}
+
+.radio-toolbar input[type='radio']:checked + label {
+    background-color: #bfb;
+    border-color: #4c4;
+}
+
+
+  </style>
+    <div style="color:white; display:block; background-color: #ff3737;zoom:250%;padding:10px">
+    <h1 id='cor'>OPÇÕES</h1>
         <form>
-            <p>Estado do LED: </p>
-            <input type='radio' id='led1' name='led' value='on'>
-            <label for='led1'>ON</label>
-            <br>
-            <input type='radio' id='led2' name='led' value='off'>
-            <label for='led2'>OFF</label>
-            <br>
-            <input type='submit' value='Atualizar'>
+            <p>ESTADO DO LED: </p>
+          
+          <div class="radio-toolbar">
+              <input type="radio" id="led1" name="led" value="on" >
+              <label for="led1">ON</label>
+              <input type="radio" id="led2" name="led" value="off" checked>
+              <label for="led2">OFF</label>
+          </div>
+          
+                <input type='submit' style='padding:10px;margin:11px;border:solid;border-color:white;border-radius:5px' value='ATUALIZAR'>
+          
             <p>VALOR ADC:</p>
             <p id='adc'></p>
         </form>
@@ -22,9 +62,9 @@
             var c = url.searchParams.get("led");
             if (c != null) {
                 if (c.localeCompare("on") == 0)
-                    document.getElementById("bd").style.backgroundColor = "blue";
+                    document.getElementById("bd").style.backgroundColor = "#706eff";
                 else
-                    document.getElementById("bd").style.backgroundColor = "red";
+                    document.getElementById("bd").style.backgroundColor = "#ff3737";
             }    
                 document.getElementById("adc").innerText = adc + " -> " + Math.round(100*adc / 1024);
         }
